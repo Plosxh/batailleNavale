@@ -4,6 +4,8 @@ class Bateau:
         self._bateau = {}
         self._largeur = largeur
         self._longueur = longueur
+        self._coordX = 0
+        self._coordY = 0
         for i in range(largeur):
             rows = {}
             for j in range(longueur):
@@ -11,7 +13,10 @@ class Bateau:
             self._bateau[i] = rows
 
     def est_Touche(self,x,y):
-        self._bateau[x][y] = True
+        try:
+            self._bateau[x][y] = True
+        except KeyError:
+            return "Error Out Of Bound"
 
     def est_Coule(self):
         for i in range(self._largeur):
@@ -19,3 +24,10 @@ class Bateau:
                 if self._bateau[i][j] == False:
                     return False
         return True
+
+    def set_Coords(self,x,y):
+        self._coordX = x
+        self._coordY = y
+
+    def get_Coords(self):
+        return self._coordX, self._coordY

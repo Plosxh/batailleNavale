@@ -12,10 +12,11 @@ class TestBataille(unittest.TestCase):
         self.assertEqual("Error Out Of Bound",jeu.get_Grille(1,nbCase +1))
 
     def test_Bateau(self):
-        bateau = Bateau(1,2)
+        bateau = Bateau(2,1)
         bateau.est_Touche(0,0)
         self.assertEqual(False, bateau.est_Coule())
-        bateau.est_Touche(0,1)
+        self.assertEqual("Error Out Of Bound", bateau.est_Touche(1, 1))
+        bateau.est_Touche(1,0)
         self.assertEqual(True,bateau.est_Coule())
 
     def test_Player(self):
@@ -28,12 +29,12 @@ class TestBataille(unittest.TestCase):
         joueur.perd()
         self.assertEqual(0, joueur.get_Score())
 
-    def test_Ajout_Bateau(self):
-        nbCase = 10
-        jeu = Jeu(nbCase)
-        bateau = Bateau(x,y)
-        self.assertEqual(True,jeu.ajout_Bateau(1,1,bateau))
-        self.assertEqual(True,jeu.ajout_Bateau(1,nbCase+1,bateau))
+    #def test_Ajout_Bateau(self):
+        #nbCase = 10
+        #jeu = Jeu(nbCase)
+        #bateau = Bateau(x,y)
+        #self.assertEqual(True,jeu.ajout_Bateau(1,1,bateau))
+        #self.assertEqual(True,jeu.ajout_Bateau(1,nbCase+1,bateau))
 
 
 unittest.main()

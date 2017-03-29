@@ -18,6 +18,6 @@ class Jeu:
         except KeyError:
             return "Error Out Of Bound"
 
-    def ajout_Bateau(self,caseX,caseY,bateau):
+    #def ajout_Bateau(self,caseX,caseY,bateau):
 
-        try:
+        #try:
