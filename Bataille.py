@@ -10,3 +10,11 @@ class Jeu:
             
     def jouer(self):
         print ("toto")
+
+    def get_Grille(self,x,y):
+        
+        try:
+            return self._grille[x][y]
+        except KeyError:
+            return "Error Out Of Bound"
+            
