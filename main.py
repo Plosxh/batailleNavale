@@ -1,6 +1,7 @@
 import unittest
 from Bataille import *
 from player import *
+
 class TestBataille(unittest.TestCase):
 
     def test_Base(self):
@@ -19,8 +20,12 @@ class TestBataille(unittest.TestCase):
         joueur.perd()
         self.assertEqual(0, joueur.get_Score())
 
-        
-       
+    def test_Ajout_Bateau(self):
+        nbCase = 10
+        jeu = Jeu(nbCase)
+        bateau = Bateau(x,y)
+        self.assertEqual(True,jeu.ajout_Bateau(1,1,bateau))
+        self.assertEqual(True,jeu.ajout_Bateau(1,nbCase+1,bateau))
 
 
-unittest.main()    
+unittest.main()
