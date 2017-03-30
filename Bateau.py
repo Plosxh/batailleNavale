@@ -19,3 +19,9 @@ class Bateau:
                 if self._bateau[i][j] == False:
                     return False
         return True
+
+    def get_Largeur(self):
+        return self._largeur
+
+    def get_Longueur(self):
+        return self._longueur
