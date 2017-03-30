@@ -1,9 +1,12 @@
-class Player:
+from Grille import *
 
-    def __init__ (self,nom,bateau):
+class Player:
+    def __init__ (self,nom,bateaux, id, tailleGrille):
         self._score = 0
         self._nom = nom
-        self._bateaux = bateau
+        self._id = id
+        self._bateaux = bateaux
+        self._grille = Grille(tailleGrille)
 
     def gagne(self):
         self._score += 1
@@ -18,26 +21,11 @@ class Player:
     def get_Nom(self):
         return self._nom
 
-    def get_Bateau(self):
+    def get_Bateaux(self):
         return self._bateaux
 
+    def get_ID(self):
+        return self._id
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    def get_Grille(self):
+        return self._grille
