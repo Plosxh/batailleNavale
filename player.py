@@ -1,7 +1,6 @@
 from Grille import *
 
 class Player:
-
     def __init__ (self,nom,bateaux, id, tailleGrille):
         self._score = 0
         self._nom = nom
