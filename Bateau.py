@@ -31,3 +31,9 @@ class Bateau:
 
     def get_Coords(self):
         return self._coordX, self._coordY
+
+    def get_Largeur(self):
+        return self._largeur
+
+    def get_Longueur(self):
+        return self._longueur
