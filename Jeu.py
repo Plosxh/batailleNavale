@@ -37,11 +37,23 @@ class Jeu:
         print("Le nombre de bateaux de cette partie est : " + str(self._nbBateaux))
 
         for i in range(self._nbBateaux):
-            bateaux[i]= Bateau(2,2,i)
-            print("Bateau de "+str(bateaux[i].get_Largeur())+"*"+str(bateaux[i].get_Longueur())+" ajouté.")
+            while True:
+                line = input('Entrez les coordonnées du bâteau sous forme: x,y : ')
+                coord = line.split(',')
+                if len(coord)>2:
+                    print("Mauvais nombre de carractères")
+                else:
+                    test,x,y = self.test_int(coord[0],coord[1])
+                    if test:
+                        bateaux[i]= Bateau(x,y,i)
+                        print("Bateau de "+str(bateaux[i].get_Largeur())+"*"+str(bateaux[i].get_Longueur())+" ajouté.")
+                        break
 
-        self._joueurs[1] = Player("Toto",bateaux,1,10)
-        self._joueurs[2] = Player("Albert",bateaux,2,10)
+
+        nomP1 = input('Entrez le nom du joueur 1 : ')
+        nomP2 = input('Entrez le nom du joueur 2 : ')
+        self._joueurs[1] = Player(nomP1,bateaux,1,10)
+        self._joueurs[2] = Player(nomP2,bateaux,2,10)
         for i in range(len(self._joueurs)):
             for i in range(len(bateaux)):
                 print("==================================================================")

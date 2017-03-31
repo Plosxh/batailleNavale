@@ -39,10 +39,9 @@ class Player:
                caseX,caseY = bateau.get_Coords()
                bateau.est_Touche(x-caseX,y-caseY)
                print("Touché !")
-               print(joueur.get_Bateaux())
                if bateau.est_Coule():
                    print("Coulé !")
-                   joueur.get_Bateaux().remove(bateau)
+                   joueur.get_Bateaux().pop(bateau.get_ID())
 
             except ValueError:
                if case_visee== CONST_TRUE:

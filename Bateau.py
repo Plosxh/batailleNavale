@@ -15,7 +15,7 @@ class Bateau:
 
     def est_Touche(self,x,y):
         try:
-            self._bateau[x][y] = True
+            self._bateau[x-1][y-1] = True
         except KeyError:
             return "Problem appears"
 
@@ -33,6 +33,9 @@ class Bateau:
 
     def get_Coords(self):
         return self._coordX, self._coordY
+
+    def get_Bateau(self):
+        return self._bateau
 
     def get_Largeur(self):
         return self._largeur
