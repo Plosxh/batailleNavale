@@ -1,11 +1,12 @@
 class Bateau:
 
-    def __init__(self,largeur,longueur):
+    def __init__(self,largeur,longueur,id):
         self._bateau = {}
         self._largeur = largeur
         self._longueur = longueur
         self._coordX = 0
         self._coordY = 0
+        self._id = id
         for i in range(largeur):
             rows = {}
             for j in range(longueur):
@@ -16,7 +17,8 @@ class Bateau:
         try:
             self._bateau[x][y] = True
         except KeyError:
-            return "Error Out Of Bound"
+            return "Problem appears"
+
 
     def est_Coule(self):
         for i in range(self._largeur):
@@ -37,3 +39,6 @@ class Bateau:
 
     def get_Longueur(self):
         return self._longueur
+
+    def get_ID(self):
+        return self._id

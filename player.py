@@ -29,3 +29,23 @@ class Player:
 
     def get_Grille(self):
         return self._grille
+
+    def tire(self,x,y,joueur):
+
+        case_visee = joueur.get_Grille().get_Case(x,y)
+        if case_visee >= 0:
+            try:
+               bateau = joueur.get_Bateaux()[case_visee]
+               caseX,caseY = bateau.get_Coords()
+               bateau.est_Touche(x-caseX,y-caseY)
+               print("Touché !")
+               print(joueur.get_Bateaux())
+               if bateau.est_Coule():
+                   print("Coulé !")
+                   joueur.get_Bateaux().remove(bateau)
+
+            except ValueError:
+               if case_visee== CONST_TRUE:
+                   print("Vous avez touché une île !")
+               else:
+                   print("Coup dans l'eau !")

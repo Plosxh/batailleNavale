@@ -1,3 +1,5 @@
+CONST_TRUE = -1
+CONST_FALSE = -2
 
 class Grille:
     def __init__(self,nbCase):
@@ -5,10 +7,10 @@ class Grille:
         for i in range(nbCase):
             rows = {}
             for j in range(nbCase):
-                rows[j]=False
+                rows[j]=CONST_FALSE
             self._grille[i]=rows
 
-    def get_Grille(self,x,y):
+    def get_Case(self,x,y):
         try:
             return self._grille[x][y]
         except KeyError:
@@ -17,10 +19,14 @@ class Grille:
     def ajout_Bateau(self,caseX,caseY,bateau):
         try:
             for i in range(bateau.get_Largeur()):
-                self._grille[caseX+i][caseY] = True
+                for j in range(bateau.get_Longueur()):
+                    if self._grille[caseX+i][caseY+j] == CONST_FALSE:
+                        self._grille[caseX+i][caseY+j] = bateau.get_ID() #bateau.get_ID()
+                    elif self._grille[caseX+i][caseY+j] == CONST_TRUE:
+                        print("Il y a deja un bâteau ici !")
 
-            for i in range(bateau.get_Longueur()):
-                self._grille[caseX][caseY+i] = True
+
+
         except TypeError:
             #print(self._grille)
             print("Couldn't place Boat")
