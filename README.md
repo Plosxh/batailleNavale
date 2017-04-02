@@ -1,4 +1,6 @@
-﻿Grille Taille variable ( env 2 tests ) cas normale, cas limite
+﻿ !! La version final du jeu se trouve dans la branche "jeu" !!
+
+Grille Taille variable ( env 2 tests ) cas normale, cas limite
 Placer n'importe quel bâteau sur la grille. test bâteaux implaçable/grille pleine etc...
 Lancer missiles (x,y)
 2 Joueurs
