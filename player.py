@@ -4,7 +4,7 @@ class Player:
     def __init__ (self,nom,bateaux, id, tailleGrille):
         self._score = 0
         self._nom = nom
-        self._id = id
+        self._id = id # "id" -> mot-clef à éviter, il est semi-réserver par Python (et par pas mal d'autres langages, donc à éviter en général (_id est tout à fait acceptable par contre))
         self._bateaux = bateaux
         self._grille = Grille(tailleGrille)
 

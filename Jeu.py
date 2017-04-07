@@ -1,5 +1,5 @@
 from random import randint
-from Player import *
+from player import * # Player -> player
 from Bateau import *
 
 class Jeu:
@@ -15,7 +15,7 @@ class Jeu:
     def init_Jeu(self):
 
         nbBateaux = 3
-        bateaux = {}
+        bateaux = {} # il faudrait utiliser l'attribut déclaré plus haut
         print("Le nombre de bateaux de cette partie est : " + str(nbBateaux))
 
         for i in range(nbBateaux):

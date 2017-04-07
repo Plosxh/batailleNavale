@@ -1,7 +1,7 @@
 
 class Grille:
     def __init__(self,nbCase):
-        self._grille = {}
+        self._grille = {} # CF Bateau.py
         for i in range(nbCase):
             rows = {}
             for j in range(nbCase):
@@ -23,4 +23,4 @@ class Grille:
                 self._grille[caseX][caseY+i] = True
         except TypeError:
             #print(self._grille)
-            print("Couldn't place Boat")
+            print("Couldn't place Boat") # encore mieux si vous faites un print sur la sortie d'erreur : print("...", file=sys.stderr)

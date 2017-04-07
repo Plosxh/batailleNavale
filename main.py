@@ -1,16 +1,19 @@
 import unittest
-from Bataille import *
+#from Bataille import * # pas de fichier Bataille dans votre projet ?
+from Jeu import * # ajouté pour que ça tourne
 from player import *
 from Bateau import *
 
 class TestBataille(unittest.TestCase):
 
-    def test_Base(self):
+    def test_Base(self): # CF Bateau.py sur les noms
         nbCase = 10
-        jeu = Jeu(nbCase)
+        jeu = Jeu(nbCase) # vous n'avez pas import Jeu
         self.assertEqual(False,jeu.get_Grille(1,1))
         self.assertEqual("Error Out Of Bound",jeu.get_Grille(1,nbCase +1))
 
+        #oh, vous avez écrit la même chose dans Test.py... bon, ben on se retrouve là-bas
+        
     def test_Bateau(self):
         bateau = Bateau(2,1)
         bateau.est_Touche(0,0)
