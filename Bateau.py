@@ -1,8 +1,7 @@
 class Bateau:
 
-    '''
-    bon point : les attributs privés commencent par "_"
-    '''
+    
+    # bon point : les attributs privés commencent par "_"
     def __init__(self,largeur,longueur):
         self._bateau = {} # attribut = nom de classe -> pas top
         self._largeur = largeur
@@ -16,7 +15,8 @@ class Bateau:
             self._bateau[i] = rows
         #ici, bateau est un dictionnaire de dictionnaires, il aurait mieux valu un tableau de tableau
 
-    # il faut choisir une norme de noms : soit vous écrivez "ma_fonction" (la façon standard en python), soit "maFonction", mais si vous faites les deux au final vous ne respectez plus aucun standard
+        # cette fonction est nommée comme un getter, mais a une action sur l'objet
+        # principe à respecter : getter -> voix passive (est_touché, a_du_carburant, get_height...) ; setter -> voix active (toucher, remplir_reservoir, set_flag...)
     def est_Touche(self,x,y):
         try: # <---- très bien ça, c'est pythonique !
             self._bateau[x][y] = True
@@ -30,6 +30,7 @@ class Bateau:
                     return False
         return True
 
+    # il faut choisir une norme de noms : soit vous écrivez "ma_fonction" (la façon standard en python), soit "maFonction", mais si vous faites les deux au final vous ne respectez plus aucun standard
     def set_Coords(self,x,y):
         self._coordX = x
         self._coordY = y

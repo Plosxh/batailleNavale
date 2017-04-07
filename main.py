@@ -12,7 +12,7 @@ class TestBataille(unittest.TestCase):
         self.assertEqual(False,jeu.get_Grille(1,1))
         self.assertEqual("Error Out Of Bound",jeu.get_Grille(1,nbCase +1))
 
-        #oh, vous avez écrit la même chose dans Test.py... bon, ben on se retrouve là-bas
+        #oh, vous avez écrit la même chose dans Test.py... bon, ben on se retrouve là-bas (il aurait fallu supprimer celui-ci)
         
     def test_Bateau(self):
         bateau = Bateau(2,1)
