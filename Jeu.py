@@ -14,8 +14,8 @@ class Jeu:
 
     def init_Jeu(self):
 
-        nbBateaux = 3
-        bateaux = {} # il faudrait utiliser l'attribut déclaré plus haut
+        nbBateaux = 3 # il faudrait utiliser l'attribut déclaré plus haut
+        bateaux = {} 
         print("Le nombre de bateaux de cette partie est : " + str(nbBateaux))
 
         for i in range(nbBateaux):
